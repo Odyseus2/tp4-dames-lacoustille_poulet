@@ -19,29 +19,34 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PionTest {
     
     public PionTest() {
+        //nothing to do
     }
     
     @BeforeAll
     public static void setUpClass() {
+        //nothing to do
     }
     
     @AfterAll
     public static void tearDownClass() {
+        //nothing to do
     }
     
     @BeforeEach
     public void setUp() {
+        //nothing to do
     }
     
     @AfterEach
     public void tearDown() {
+        //nothing to do
     }
 
     /**
      * Test of deplaceNonPrenable method, of class Pion.
      */
     @Test
-    public void testDeplaceNonPrenable() {
+    void testDeplaceNonPrenable() {
         Logger logger = Logger.getLogger(getClass().getName());
         logger.info("deplaceNonPrenable");
         Plateau plateau = new Plateau(new Pion[10][10]);
@@ -53,7 +58,7 @@ public class PionTest {
     }
     
     @Test
-    public void testDeplacePrenable(){
+    void testDeplacePrenable(){
         Logger logger = Logger.getLogger(getClass().getName());
         logger.info("deplacePrenable");
         Plateau plateau = new Plateau(new Pion[10][10]);
