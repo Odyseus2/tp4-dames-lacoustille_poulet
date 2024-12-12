@@ -105,18 +105,6 @@ public class Point2D {
     public void affiche(){
         System.out.println("["+this.x+";"+this.y+"]");
     }
-    //distance entre deux points
-
-    /**
-     *
-     * @param p
-     * @return Distance entre les deux points
-     */
-    public float distance(Point2D p){
-        double X=(double)this.x-p.x;
-        double Y=(double)this.y-p.y;
-        return (float)Math.sqrt(X*X+Y*Y);
-    }
 
     public void coordonneeCheck() throws IndexOutOfBoundsException{
         if (x<0 ||x>9 || y<0 || y>9){
