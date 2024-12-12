@@ -23,16 +23,15 @@ public class Pion {
     }
 
     public Pion(int x, int y, int couleur) {
-        this.setPos(x, y);
-        this.setCouleur(couleur);
+        Pion(new Point2D(x, y), couleur)
     }
 
     public Point2D getPos() {
-        return pos;
+        return this.pos;
     }
 
     public int getCouleur() {
-        return couleur;
+        return this.couleur;
     }
 
     public void setPos(Point2D pos) {
@@ -40,7 +39,7 @@ public class Pion {
     }
 
     public void setPos(int x, int y) {
-        this.pos = new Point2D(x, y);
+        setPos(new Point2D(x, y));
     }
 
     public int getX() {
