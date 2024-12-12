@@ -61,30 +61,30 @@ public class Pion {
             case 0:
                 //nord-est
                 if(this.couleur==BLANC){
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(-1, 1);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 //sud-est
                 else{
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(1, 1);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 break;
             //Déplacement nord/sud-ouest
             case 1:
                 //nord-ouest
                 if(this.couleur==BLANC){
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(-1, -1);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 //sud-ouest
                 else{
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(1, -1);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }   
                 break;
             default:
@@ -101,60 +101,60 @@ public class Pion {
             case 0:
                 //nord-ouest
                 if(this.couleur==BLANC){
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(-2, 2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 //sud-est
                 else{
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(2, 2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 break;
             //nord/sud ouest
             case 1 :
                 //nord-ouest
                 if(this.couleur==BLANC){
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(-2, -2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 //sud-ouest
                 else{
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(2, -2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 break;
             //sud/nord ouest
             case 2: 
                 //sud-ouest
                 if(this.couleur==BLANC){
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(2, -2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 //nord-ouest
                 else{
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(-2, -2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 break;
             //sud/nord-est
             case 3:
                 //sud-est
                 if(this.couleur==BLANC){
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(2, 2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                     
                 }
                 else{
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    plateau.getContenu()[this.getX()][this.getY()]=null;
                     this.getPos().translate(-2, 2);
-                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    plateau.getContenu()[this.getX()][this.getY()]=this;
                 }
                 break;
             default:
