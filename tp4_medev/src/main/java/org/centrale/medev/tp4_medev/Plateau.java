@@ -69,7 +69,7 @@ public class Plateau {
                     default:
                         break;
                 }
-                ligneString +="|"
+                ligneString +="|";
                 logger.info(ligneString);
             }
         }
