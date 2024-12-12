@@ -37,17 +37,33 @@ public class PionTest {
     }
 
     /**
-     * Test of deplace method, of class Pion.
+     * Test of deplaceNonPrenable method, of class Pion.
      */
     @Test
-    public void testDeplace() {
-        System.out.println("deplace");
+    public void testDeplaceNonPrenable() {
+        System.out.println("deplaceNonPrenable");
         Plateau plateau = new Plateau(new Pion[10][10]);
         int n = 0;
         plateau.getContenu()[5][5]=new Pion(new Point2D(5,5),0);
-        plateau.getContenu()[5][5].deplace(plateau, n);
-        assertEquals(6,plateau.getContenu()[5][5].getPos().getX());
-        assertEquals(6,plateau.getContenu()[5][5].getPos().getY());
+        plateau.getContenu()[5][5].deplaceNonPrenable(plateau, n);
+        assertEquals(6,plateau.getContenu()[6][6].getPos().getX());
+        assertEquals(6,plateau.getContenu()[6][6].getPos().getY());
     }
+    
+    @Test
+    public void testDeplacePrenable(){
+        System.out.println("deplacePrenable");
+        Plateau plateau = new Plateau(new Pion[10][10]);
+        int n = 0;
+        plateau.getContenu()[5][5]=new Pion(new Point2D(5,5),0);
+        Pion pion=new Pion(new Point2D(6,6),1);
+        plateau.getContenu()[6][6]=pion;
+        plateau.getContenu()[5][5].deplacePrenable(plateau, n,pion);
+        assertEquals(7,plateau.getContenu()[7][7].getPos().getX());
+        assertEquals(7,plateau.getContenu()[7][7].getPos().getY());
+        assertEquals(null, plateau.getContenu()[6][6]);
+    }
+    
+    
     
 }
