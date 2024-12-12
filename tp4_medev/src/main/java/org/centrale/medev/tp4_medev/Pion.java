@@ -39,10 +39,10 @@ public class Pion {
             case 0:
                 if(plateau.getContenu()[this.pos.getX()-1][this.pos.getY()+1] instanceof Pion){
                     if(this.couleur==this.BLANC){
-                        this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()+2));
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()+2));
                     }
                     else{
-                        this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()+2));
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()+2));
                     }
                 }
                 else{
@@ -57,10 +57,10 @@ public class Pion {
             case 1:
                 if(plateau.getContenu()[this.pos.getX()-1][this.pos.getY()-1] instanceof Pion){
                     if(this.couleur==this.BLANC){
-                        this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()-2));
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()-2));
                     }
                     else{
-                        this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()-2));
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()-2));
                     }
                 }
                 else{
@@ -72,7 +72,24 @@ public class Pion {
                     }   
                 }
                 break;
+            case 2: 
+                if(this.couleur==this.BLANC){
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()-2));
+                    }
+                    else{
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()-2));
+                    }
+                break;
+            case 3:
+                if(this.couleur==this.BLANC){
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()+2));
+                    }
+                    else{
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()+2));
+                    }
+                break;
         }
+            
     }
     public Pion(Point2D pos, int couleur) {
         this.pos = pos;
