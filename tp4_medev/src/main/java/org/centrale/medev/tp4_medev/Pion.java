@@ -26,7 +26,7 @@ public class Pion {
     }
 
     public Pion(int x, int y, int couleur) {
-        Pion(new Point2D(x, y), couleur);
+        new Pion(new Point2D(x, y), couleur);
     }
 
     public Point2D getPos() {
