@@ -48,7 +48,7 @@ public class Plateau {
         for (int column=0;column<10;column++){
             for (int line=0;line<10;line++){
                 Pion pion = contenu[line][column];
-                String ligneString = "";
+                String ligneString = "|";
                 int valeur = valPion(pion);
                 switch (valeur){
                     case -1:
@@ -69,6 +69,7 @@ public class Plateau {
                     default:
                         break;
                 }
+                ligneString +="|"
                 logger.info(ligneString);
             }
         }
