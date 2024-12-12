@@ -99,13 +99,6 @@ public class Point2D {
     }
     //getter des deux composantes
 
-    /**
-     *
-     */
-    public void affiche(){
-        System.out.println("["+this.x+";"+this.y+"]");
-    }
-
     public void coordonneeCheck() throws IndexOutOfBoundsException{
         if (x<0 ||x>9 || y<0 || y>9){
             throw new IndexOutOfBoundsException("Position hors de la grille");
