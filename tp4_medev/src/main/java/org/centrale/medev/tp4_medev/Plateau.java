@@ -38,12 +38,16 @@ public class Plateau {
                     switch (valeur){
                         case 0:
                             System.out.println('\u26C0');
+                            break;
                         case 1:
                             System.out.println('\u26C1');
+                            break;
                         case 2:
                             System.out.println('\u26C2');
+                            break;
                         case 3:
                             System.out.println('\u26C3');
+                            break;
                     }
 
                 }else{

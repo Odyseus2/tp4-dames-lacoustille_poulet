@@ -55,7 +55,7 @@ public class Pion {
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()+2));
                     }
                     else{
-                        this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()+2));
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()+2));
                     }
                 }
                 else{
@@ -66,13 +66,14 @@ public class Pion {
                         this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()+1));
                     }
                 }
+                break;
             case 1:
                 if(plateau.getContenu()[this.pos.getX()][this.pos.getY()] instanceof Pion){
                     if(this.couleur==BLANC){
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()-2));
                     }
                     else{
-                        this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()-2));
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()-2));
                     }
                 }
                 else{
@@ -81,8 +82,30 @@ public class Pion {
                     }
                     else{
                         this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()-1));
-                    }
+                    }   
                 }
+                break;
+            case 2: 
+                if(this.couleur==this.BLANC){
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()-2));
+                    }
+                    else{
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()-2));
+                    }
+                break;
+            case 3:
+                if(this.couleur==this.BLANC){
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()+2));
+                    }
+                    else{
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()+2));
+                    }
+                break;
         }
+            
+    }
+    
+    public void prendre(Pion pion){
+        pion=null;
     }
 }
