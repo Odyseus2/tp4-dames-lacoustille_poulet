@@ -8,7 +8,7 @@ package org.centrale.medev.tp4_medev;
  *
  * @author clesp
  */
-public class Tp4_medev {
+public class TpMedev4 {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");

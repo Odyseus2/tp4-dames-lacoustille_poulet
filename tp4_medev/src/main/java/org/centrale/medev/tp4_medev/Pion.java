@@ -11,11 +11,20 @@ package org.centrale.medev.tp4_medev;
 public class Pion {
     private Point2D pos;
     private int couleur;
-    public final int NOIR = 0;
-    public final int BLANC = 1;
+    public static final int NOIR = 0;
+    public static final int BLANC = 1;
 
     public Pion() {
-        
+    }
+    
+    public Pion(Point2D pos, int couleur) {
+        this.setPos(pos);
+        this.setCouleur(couleur);
+    }
+
+    public Pion(int x, int y, int couleur) {
+        this.setPos(x, y);
+        this.setCouleur(couleur);
     }
 
     public Point2D getPos() {
@@ -27,7 +36,19 @@ public class Pion {
     }
 
     public void setPos(Point2D pos) {
-        this.pos = pos;
+        this.pos = new Point2D(pos);
+    }
+
+    public void setPos(int x, int y) {
+        this.pos = new Point2D(x, y);
+    }
+
+    public int getX() {
+        return this.pos.getX();
+    }
+
+    public int getY() {
+        return this.pos.getY();
     }
 
     public void setCouleur(int couleur) {
@@ -135,10 +156,6 @@ public class Pion {
                 }
                 break;
         }
-    }
-    public Pion(Point2D pos, int couleur) {
-        this.pos = pos;
-        this.couleur = couleur;
     }
     public void prendre(Plateau plateau,Pion pion){
         plateau.getContenu()[pion.getPos().getX()][pion.getPos().getY()]=null;
