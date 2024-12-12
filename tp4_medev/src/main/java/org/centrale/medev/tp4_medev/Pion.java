@@ -86,7 +86,7 @@ public class Pion {
                 }
                 break;
             case 2: 
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                         this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()-2));
                     }
                     else{
@@ -94,7 +94,7 @@ public class Pion {
                     }
                 break;
             case 3:
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                         this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()+2));
                     }
                     else{
@@ -104,7 +104,7 @@ public class Pion {
         }
             
     }
-    
+
     public void prendre(Pion pion){
         pion=null;
     }
