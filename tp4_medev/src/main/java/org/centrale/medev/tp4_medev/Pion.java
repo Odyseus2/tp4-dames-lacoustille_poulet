@@ -37,7 +37,7 @@ public class Pion {
     public void deplace(Plateau plateau,int n){
         switch (n){
             case 0:
-                if(plateau.getContenu()[this.pos.getX()][this.pos.getY()] instanceof Pion){
+                if(plateau.getContenu()[this.pos.getX()-1][this.pos.getY()+1] instanceof Pion){
                     if(this.couleur==this.BLANC){
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()+2));
                     }
@@ -53,8 +53,9 @@ public class Pion {
                         this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()+1));
                     }
                 }
+                break;
             case 1:
-                if(plateau.getContenu()[this.pos.getX()][this.pos.getY()] instanceof Pion){
+                if(plateau.getContenu()[this.pos.getX()-1][this.pos.getY()-1] instanceof Pion){
                     if(this.couleur==this.BLANC){
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()-2));
                     }
@@ -68,13 +69,17 @@ public class Pion {
                     }
                     else{
                         this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()-1));
-                    }
+                    }   
                 }
+                break;
         }
     }
     public Pion(Point2D pos, int couleur) {
         this.pos = pos;
         this.couleur = couleur;
+    }
+    public void prendre(Pion pion){
+        pion=null;
     }
     
 }
