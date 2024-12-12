@@ -14,6 +14,10 @@ public class Pion {
     public final int NOIR = 0;
     public final int BLANC = 1;
 
+    public Pion() {
+        
+    }
+
     public Point2D getPos() {
         return pos;
     }
