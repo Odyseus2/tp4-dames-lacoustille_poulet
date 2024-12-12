@@ -9,12 +9,9 @@ package org.centrale.medev.tp4_medev;
  * @author clesp
  */
 public class Dame extends Pion{
-    public Dame(Point2D pos, int couleur) {
-        super(pos, couleur);
-    }
     
     @Override
     public void deplace(Plateau plateau,int n){
-        
+        // TODO
     }
 }
