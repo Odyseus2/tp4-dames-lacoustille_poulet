@@ -13,6 +13,9 @@ public class Pion {
     private int couleur;
     public static final int NOIR = 0;
     public static final int BLANC = 1;
+    protected static final int[][] DIRECTIONS = new int[][]{
+        {-1, 1}, {1, 1}, {-1, -1}, {1, -1}
+    };
 
     public Pion() {
     }
@@ -55,112 +58,33 @@ public class Pion {
         this.couleur = couleur;
     }
 
+    private void deplSurPlateau(Plateau plateau, int dx, int dy) {
+        plateau.getContenu()[this.getX()][this.getY()]=null;
+        this.getPos().translate(dx, dy);
+        plateau.getContenu()[this.getX()][this.getY()]=this;
+    }
+
+    private void deplSurPlateauDirDist(Plateau plateau, int dir, int dist) {
+        int dx = DIRECTIONS[dir][0]*dist;
+        int dy = DIRECTIONS[dir][1]*dist;
+        deplSurPlateau(plateau, dx, dy);
+    }
+
     public void deplaceNonPrenable(Plateau plateau,int n){
-        switch (n){
-            //Déplacement nord/sud-est
-            case 0:
-                //nord-est
-                if(this.couleur==BLANC){
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(-1, 1);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                //sud-est
-                else{
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(1, 1);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                break;
-            //Déplacement nord/sud-ouest
-            case 1:
-                //nord-ouest
-                if(this.couleur==BLANC){
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(-1, -1);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                //sud-ouest
-                else{
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(1, -1);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }   
-                break;
-            default:
-                break;
-        }
-            
+        int dist = 1;
+        int dir = 2*n + ((this.couleur == BLANC) ? 0 : 1);
+        deplSurPlateauDirDist(plateau, dir, dist);   
     }
-    public void deplacePrenable(Plateau plateau,int n, Pion pionPris){
+
+    public void deplacePrenable(Plateau plateau, int n, Pion pionPris){
+        int dir = n;
+        //ordre des directions : [{-1, 1}, {1, 1}, {-1, -1}, {1, -1}]
+        int dist = 2;        
+        deplSurPlateauDirDist(plateau, dir, dist);
         //Prise du pion
-        this.prendre(plateau,pionPris);
-        //Déplacement
-        switch(n){
-            //Déplacement nord/sud-est
-            case 0:
-                //nord-ouest
-                if(this.couleur==BLANC){
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(-2, 2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                //sud-est
-                else{
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(2, 2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                break;
-            //nord/sud ouest
-            case 1 :
-                //nord-ouest
-                if(this.couleur==BLANC){
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(-2, -2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                //sud-ouest
-                else{
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(2, -2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                break;
-            //sud/nord ouest
-            case 2: 
-                //sud-ouest
-                if(this.couleur==BLANC){
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(2, -2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                //nord-ouest
-                else{
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(-2, -2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                break;
-            //sud/nord-est
-            case 3:
-                //sud-est
-                if(this.couleur==BLANC){
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(2, 2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                    
-                }
-                else{
-                    plateau.getContenu()[this.getX()][this.getY()]=null;
-                    this.getPos().translate(-2, 2);
-                    plateau.getContenu()[this.getX()][this.getY()]=this;
-                }
-                break;
-            default:
-                break;
-        }
+        this.prendre(plateau, pionPris);
     }
+
     public void prendre(Plateau plateau,Pion pion){
         plateau.getContenu()[pion.getPos().getX()][pion.getPos().getY()]=null;
     } 
