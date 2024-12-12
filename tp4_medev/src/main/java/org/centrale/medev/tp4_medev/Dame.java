@@ -10,8 +10,10 @@ package org.centrale.medev.tp4_medev;
  */
 public class Dame extends Pion{
     
-    @Override
     public void deplace(Plateau plateau,int n){
         // TODO
+    }
+    public Dame(Point2D pos, int couleur) {
+        super(pos, couleur);
     }
 }

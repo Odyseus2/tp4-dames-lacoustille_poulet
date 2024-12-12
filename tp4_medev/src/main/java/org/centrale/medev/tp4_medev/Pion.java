@@ -55,65 +55,109 @@ public class Pion {
         this.couleur = couleur;
     }
 
-    public void deplace(Plateau plateau,int n){
+    public void deplaceNonPrenable(Plateau plateau,int n){
         switch (n){
+            //Déplacement nord/sud-est
             case 0:
-                if(plateau.getContenu()[this.getX()][this.getY()] instanceof Pion){
-                    if(this.couleur==BLANC){
-                        this.setPos(new Point2D(this.getX()-1,this.getY()+2));
-                    }
-                    else{
-                        this.setPos(new Point2D(this.getX()+2,this.getY()+2));
-                    }
+                //nord-est
+                if(this.couleur==this.BLANC){
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(-1, 1);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
                 }
+                //sud-est
                 else{
-                    if(this.couleur==BLANC){
-                        this.setPos(new Point2D(this.getX()-1,this.getY()+1));
-                    }
-                    else{
-                        this.setPos(new Point2D(this.getX()+1,this.getY()+1));
-                    }
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(1, 1);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
                 }
                 break;
+            //Déplacement nord/sud-ouest
             case 1:
-                if(plateau.getContenu()[this.getX()][this.getY()] instanceof Pion){
-                    if(this.couleur==BLANC){
-                        this.setPos(new Point2D(this.getX()-1,this.getY()-2));
-                    }
-                    else{
-                        this.setPos(new Point2D(this.getX()+2,this.getY()-2));
-                    }
+                //nord-ouest
+                if(this.couleur==this.BLANC){
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(-1, -1);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
                 }
+                //sud-ouest
                 else{
-                    if(this.couleur==BLANC){
-                        this.setPos(new Point2D(this.getX()-1,this.getY()-1));
-                    }
-                    else{
-                        this.setPos(new Point2D(this.getX()+1,this.getY()-1));
-                    }   
-                }
-                break;
-            case 2: 
-                if(this.couleur==BLANC){
-                        this.setPos(new Point2D(this.getX()+2,this.getY()-2));
-                    }
-                    else{
-                        this.setPos(new Point2D(this.getX()-2,this.getY()-2));
-                    }
-                break;
-            case 3:
-                if(this.couleur==BLANC){
-                        this.setPos(new Point2D(this.getX()+2,this.getY()+2));
-                    }
-                    else{
-                        this.setPos(new Point2D(this.getX()-2,this.getY()+2));
-                    }
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(1, -1);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }   
                 break;
         }
             
     }
-
-    public void prendre(Pion pion){
-        pion=null;
+    public void deplacePrenable(Plateau plateau,int n, Pion pionPris){
+        //Prise du pion
+        this.prendre(plateau,pionPris);
+        //Déplacement
+        switch(n){
+            //Déplacement nord/sud-est
+            case 0:
+                //nord-ouest
+                if(this.couleur==this.BLANC){
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(-2, 2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }
+                //sud-est
+                else{
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(2, 2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }
+                break;
+            //nord/sud ouest
+            case 1 :
+                //nord-ouest
+                if(this.couleur==this.BLANC){
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(-2, -2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }
+                //sud-ouest
+                else{
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(2, -2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }
+                break;
+            //sud/nord ouest
+            case 2: 
+                //sud-ouest
+                if(this.couleur==this.BLANC){
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(2, -2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }
+                //nord-ouest
+                else{
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(-2, -2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }
+                break;
+            //sud/nord-est
+            case 3:
+                //sud-est
+                if(this.couleur==this.BLANC){
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(2, 2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                    
+                }
+                else{
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
+                    this.getPos().translate(-2, 2);
+                    plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
+                }
+                break;
+        }
     }
+    public void prendre(Plateau plateau,Pion pion){
+        plateau.getContenu()[pion.getPos().getX()][pion.getPos().getY()]=null;
+    } 
 }
