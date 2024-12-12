@@ -37,60 +37,6 @@ public class PionTest {
     }
 
     /**
-     * Test of getPos method, of class Pion.
-     */
-    @Test
-    public void testGetPos() {
-        System.out.println("getPos");
-        Pion instance = new Pion();
-        Point2D expResult = null;
-        Point2D result = instance.getPos();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getCouleur method, of class Pion.
-     */
-    @Test
-    public void testGetCouleur() {
-        System.out.println("getCouleur");
-        Pion instance = new Pion();
-        int expResult = 0;
-        int result = instance.getCouleur();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setPos method, of class Pion.
-     */
-    @Test
-    public void testSetPos() {
-        System.out.println("setPos");
-        Point2D pos = null;
-        Pion instance = new Pion();
-        instance.setPos(pos);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setCouleur method, of class Pion.
-     */
-    @Test
-    public void testSetCouleur() {
-        System.out.println("setCouleur");
-        int couleur = 0;
-        Pion instance = new Pion();
-        instance.setCouleur(couleur);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of deplace method, of class Pion.
      */
     @Test
