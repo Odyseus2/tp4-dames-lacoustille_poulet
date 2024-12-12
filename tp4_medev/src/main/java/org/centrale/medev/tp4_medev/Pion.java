@@ -60,7 +60,7 @@ public class Pion {
             //Déplacement nord/sud-est
             case 0:
                 //nord-est
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
                     this.getPos().translate(-1, 1);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
@@ -75,7 +75,7 @@ public class Pion {
             //Déplacement nord/sud-ouest
             case 1:
                 //nord-ouest
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
                     this.getPos().translate(-1, -1);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
@@ -86,6 +86,8 @@ public class Pion {
                     this.getPos().translate(1, -1);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
                 }   
+                break;
+            default:
                 break;
         }
             
@@ -98,7 +100,7 @@ public class Pion {
             //Déplacement nord/sud-est
             case 0:
                 //nord-ouest
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
                     this.getPos().translate(-2, 2);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
@@ -113,7 +115,7 @@ public class Pion {
             //nord/sud ouest
             case 1 :
                 //nord-ouest
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
                     this.getPos().translate(-2, -2);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
@@ -128,7 +130,7 @@ public class Pion {
             //sud/nord ouest
             case 2: 
                 //sud-ouest
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
                     this.getPos().translate(2, -2);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
@@ -143,7 +145,7 @@ public class Pion {
             //sud/nord-est
             case 3:
                 //sud-est
-                if(this.couleur==this.BLANC){
+                if(this.couleur==BLANC){
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=null;
                     this.getPos().translate(2, 2);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
@@ -154,6 +156,8 @@ public class Pion {
                     this.getPos().translate(-2, 2);
                     plateau.getContenu()[this.pos.getX()][this.pos.getY()]=this;
                 }
+                break;
+            default:
                 break;
         }
     }
