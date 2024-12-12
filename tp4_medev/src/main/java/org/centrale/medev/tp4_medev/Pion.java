@@ -15,7 +15,16 @@ public class Pion {
     public static final int BLANC = 1;
 
     public Pion() {
-        
+    }
+    
+    public Pion(Point2D pos, int couleur) {
+        this.setPos(pos);
+        this.setCouleur(couleur);
+    }
+
+    public Pion(int x, int y, int couleur) {
+        this.setPos(x, y);
+        this.setCouleur(couleur);
     }
 
     public Point2D getPos() {
@@ -27,7 +36,11 @@ public class Pion {
     }
 
     public void setPos(Point2D pos) {
-        this.pos = pos;
+        this.pos = new Point2D(pos);
+    }
+
+    public void setPos(int x, int y) {
+        this.pos = new Point2D(x, y);
     }
 
     public void setCouleur(int couleur) {
@@ -38,43 +51,61 @@ public class Pion {
         switch (n){
             case 0:
                 if(plateau.getContenu()[this.pos.getX()][this.pos.getY()] instanceof Pion){
-                    if(this.couleur==this.BLANC){
+                    if(this.couleur==BLANC){
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()+2));
                     }
                     else{
-                        this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()+2));
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()+2));
                     }
                 }
                 else{
-                    if(this.couleur==this.BLANC){
+                    if(this.couleur==BLANC){
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()+1));
                     }
                     else{
                         this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()+1));
                     }
                 }
+                break;
             case 1:
                 if(plateau.getContenu()[this.pos.getX()][this.pos.getY()] instanceof Pion){
-                    if(this.couleur==this.BLANC){
+                    if(this.couleur==BLANC){
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()-2));
                     }
                     else{
-                        this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()-2));
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()-2));
                     }
                 }
                 else{
-                    if(this.couleur==this.BLANC){
+                    if(this.couleur==BLANC){
                         this.setPos(new Point2D(this.pos.getX()-1,this.pos.getY()-1));
                     }
                     else{
                         this.setPos(new Point2D(this.pos.getX()+1,this.pos.getY()-1));
-                    }
+                    }   
                 }
+                break;
+            case 2: 
+                if(this.couleur==this.BLANC){
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()-2));
+                    }
+                    else{
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()-2));
+                    }
+                break;
+            case 3:
+                if(this.couleur==this.BLANC){
+                        this.setPos(new Point2D(this.pos.getX()+2,this.pos.getY()+2));
+                    }
+                    else{
+                        this.setPos(new Point2D(this.pos.getX()-2,this.pos.getY()+2));
+                    }
+                break;
         }
-    }
-    public Pion(Point2D pos, int couleur) {
-        this.pos = pos;
-        this.couleur = couleur;
+            
     }
     
+    public void prendre(Pion pion){
+        pion=null;
+    }
 }

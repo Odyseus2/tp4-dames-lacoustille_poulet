@@ -15,8 +15,12 @@ public class Plateau {
         return contenu;
     }
 
-    public Plateau(Pion[][] contenu) {
+    public void setContenu(Pion[][] contenu) {
         this.contenu = contenu;
+    }
+
+    public Plateau(Pion[][] contenu) {
+        this.setContenu(contenu);;
     }
 
     public void affiche(){
@@ -28,18 +32,22 @@ public class Plateau {
                     if (pion instanceof Dame){
                         valeur+=1;
                     }
-                    if (pion.getCouleur()==pion.NOIR){
+                    if (pion.getCouleur()==Pion.NOIR){
                         valeur+=2;
                     }
                     switch (valeur){
                         case 0:
                             System.out.println('\u26C0');
+                            break;
                         case 1:
                             System.out.println('\u26C1');
+                            break;
                         case 2:
                             System.out.println('\u26C2');
+                            break;
                         case 3:
                             System.out.println('\u26C3');
+                            break;
                     }
 
                 }else{
