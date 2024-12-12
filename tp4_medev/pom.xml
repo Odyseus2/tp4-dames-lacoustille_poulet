@@ -31,5 +31,7 @@
         <exec.mainClass>org.centrale.medev.tp4_medev.Tp4_medev</exec.mainClass>
         <sonar.organization>odyseus2</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 </project>
