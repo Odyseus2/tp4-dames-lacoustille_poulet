@@ -26,8 +26,8 @@ public class Point2D {
      * @param y Coordonnée
      */
     public Point2D (int x,int y){
-        this.x=x;
-        this.y=y;
+        this.setX(x);
+        this.setY(y);
     }
     //avec copie d'un objet déja construit
 
@@ -36,8 +36,8 @@ public class Point2D {
      * @param p Position à copier
      */
     public Point2D (Point2D p){
-        x=p.x;
-        y=p.y;
+        this.setX(p.getX());
+        this.setY(p.getY());
     }
     //setters
 
@@ -83,9 +83,8 @@ public class Point2D {
      * @param y
      */
     public void setPosition(int x, int y){
-        this.x=x;
-        this.y=y;
-        coordonneeCheck();
+        this.setX(x);
+        this.setY(y);
     }
 
     /**
