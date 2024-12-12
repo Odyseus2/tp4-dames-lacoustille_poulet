@@ -57,7 +57,7 @@ public class PionTest {
         Logger logger = Logger.getLogger(getClass().getName());
         logger.info("deplacePrenable");
         Plateau plateau = new Plateau(new Pion[10][10]);
-        int n = 0;
+        int n = 1;
         plateau.getContenu()[5][5]=new Pion(new Point2D(5,5),0);
         Pion pion=new Pion(new Point2D(6,6),1);
         plateau.getContenu()[6][6]=pion;
