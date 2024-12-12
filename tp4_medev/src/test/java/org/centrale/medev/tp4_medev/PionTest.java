@@ -4,6 +4,7 @@
  */
 package org.centrale.medev.tp4_medev;
 
+import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,8 +41,9 @@ public class PionTest {
      * Test of deplace method, of class Pion.
      */
     @Test
-    public void testDeplace() {
-        System.out.println("deplace");
+    void testDeplace() {
+        Logger logger = Logger.getLogger(getClass().getName());
+        logger.info("déplace");
         Plateau plateau = new Plateau(new Pion[10][10]);
         int n = 0;
         plateau.getContenu()[5][5]=new Pion(new Point2D(5,5),0);

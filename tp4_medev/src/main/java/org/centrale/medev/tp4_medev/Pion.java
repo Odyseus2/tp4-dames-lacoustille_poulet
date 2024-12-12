@@ -114,6 +114,6 @@ public class Pion {
     }
 
     public void prendre(Pion pion){
-        pion=null;
+        pion = null;
     }
 }
