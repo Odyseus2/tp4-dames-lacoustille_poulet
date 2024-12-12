@@ -42,7 +42,8 @@ public class PionTest {
      */
     @Test
     public void testDeplaceNonPrenable() {
-        System.out.println("deplaceNonPrenable");
+        Logger logger = Logger.getLogger(getClass().getName());
+        logger.info("deplaceNonPrenable");
         Plateau plateau = new Plateau(new Pion[10][10]);
         int n = 0;
         plateau.getContenu()[5][5]=new Pion(new Point2D(5,5),0);
@@ -53,7 +54,8 @@ public class PionTest {
     
     @Test
     public void testDeplacePrenable(){
-        System.out.println("deplacePrenable");
+        Logger logger = Logger.getLogger(getClass().getName());
+        logger.info("deplacePrenable");
         Plateau plateau = new Plateau(new Pion[10][10]);
         int n = 0;
         plateau.getContenu()[5][5]=new Pion(new Point2D(5,5),0);
